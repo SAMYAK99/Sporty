@@ -3,9 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/drawable-v24/curve_button.xml" value="0.121" />
+        <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/drawable/ic_baseline_bookmarks.xml" value="0.1545" />
+        <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/drawable/ic_baseline_home.xml" value="0.163" />
         <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/layout/ad_layout.xml" value="0.25" />
         <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/layout/fragment_book_mark.xml" value="0.25" />
-        <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/layout/fragment_full_news.xml" value="0.25" />
+        <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/layout/fragment_home.xml" value="0.16560509554140126" />
+        <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/layout/fragment_news_detail.xml" value="0.25" />
+        <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/layout/fragment_settings.xml" value="0.2359375" />
         <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/layout/item_news.xml" value="0.25" />
         <entry key="..\:/Users/StreamerX/AndroidStudioProject/Sporty/app/src/main/res/menu/nav_menu.xml" value="0.25" />
       </map>

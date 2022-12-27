@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">स्पोर्टी</string>
+    <string name="hello_blank_fragment">हैलो खाली टुकड़ा</string>
+    <string name="diableDarkMode">डार्क मोड को अक्षम करें</string>
+    <string name="enableDarkMode">डार्क मोड सक्षम करें</string>
+    <string name="home">घर</string>
+    <string name="bookmarks">बुकमार्क</string>
+    <string name="settings">समायोजन</string>
+    <string name="read_full_news">पढ़ें पूरी खबर</string>
+    <string name="sportsText">सब कुछ खेलों के लिए भारत का सबसे बड़ा खेल समुदाय</string>
+    <string name="adText">विज्ञापन</string>
+</resources>

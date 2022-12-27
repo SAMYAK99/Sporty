@@ -4,7 +4,7 @@
 
   <item
       android:id="@+id/homeFragment"
-      android:title="Home"
+      android:title="@string/home"
       android:icon="@drawable/ic_baseline_home"
       app:showAsAction="always"
       android:enabled="true"
@@ -12,10 +12,18 @@
 
     <item
         android:id="@+id/bookMarkFragment"
-        android:title="Bookmarks"
+        android:title="@string/bookmarks"
         android:icon="@drawable/ic_baseline_bookmarks"
         app:showAsAction="always"
         android:enabled="true"
         />
+
+<!--  <item-->
+<!--      android:id="@+id/settingsFragment"-->
+<!--      android:title="@string/settings"-->
+<!--      android:icon="@drawable/ic_settings"-->
+<!--      app:showAsAction="always"-->
+<!--      android:enabled="true"-->
+<!--      />-->
 
 </menu>

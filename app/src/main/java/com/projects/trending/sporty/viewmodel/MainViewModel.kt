@@ -1,30 +1,42 @@
 package com.projects.trending.sporty.viewmodel
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.projects.trending.sporty.Repository
+import com.bumptech.glide.Glide.init
+import com.projects.trending.sporty.data.Repository
+import com.projects.trending.sporty.models.Article
 import com.projects.trending.sporty.utils.Resource
 import com.projects.trending.sporty.models.NewsModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import javax.inject.Inject
 
-class MainViewModel(private val repository: Repository)   : ViewModel(){
+@HiltViewModel
+class MainViewModel @Inject constructor( private val repository: Repository,
+                     application: Application
+)   : AndroidViewModel(application){
 
+    // Retrofit
     val breakingNews: MutableLiveData<Resource<NewsModel>> = MutableLiveData()
     var breakingNewsPage = 1
     var breakingNewsResponse: NewsModel? = null
 
 
+
+
     init {
-        getTopNews("us")
+        getTopNews("sport")
     }
 
 
     // View Model scope will make sure our coroutine will be alive as long as our view model is alive
-    fun getTopNews(countryCode: String) = viewModelScope.launch {
+    fun getTopNews(query: String) = viewModelScope.launch {
         breakingNews.postValue(Resource.Loading())   // for loading the screen
-        val response = repository.getBreakingNews(countryCode, breakingNewsPage)
+        val response = repository.remote.getBreakingNews(query, breakingNewsPage)
         breakingNews.postValue(handleBreakingNewsResponse(response))
     }
 
@@ -38,5 +50,18 @@ class MainViewModel(private val repository: Repository)   : ViewModel(){
         return Resource.Error(response.message())
     }
 
+    fun saveArticle(article: Article) = viewModelScope.launch {
+        repository.local.upsert(article)
+    }
+
+    fun getSavedNews() = repository.local.getSavedNews()
+
+    fun deleteArticle(article: Article) = viewModelScope.launch {
+        repository.local.deleteArticle(article)
+    }
+
+//    fun isDataExist(url : String) =  viewModelScope.launch {
+//        repository.isDataExist(url)
+//    }
 
 }

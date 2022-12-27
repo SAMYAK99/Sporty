@@ -8,26 +8,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.projects.trending.sporty.MainActivity
-import com.projects.trending.sporty.R
-import com.projects.trending.sporty.Repository
+import com.projects.trending.sporty.data.Repository
 import com.projects.trending.sporty.adapters.newsAdapter
 import com.projects.trending.sporty.databinding.FragmentHomeBinding
+import com.projects.trending.sporty.data.local.NewsDatabase
 import com.projects.trending.sporty.models.Article
-import com.projects.trending.sporty.remote.ApiUtilites
-import com.projects.trending.sporty.utils.Constants
 import com.projects.trending.sporty.utils.Resource
 import com.projects.trending.sporty.viewmodel.MainViewModel
-import com.projects.trending.sporty.viewmodel.MainViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 
+
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
+
 
 
     private lateinit var binding: FragmentHomeBinding
@@ -44,13 +40,17 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
         list = ArrayList()
+        adapter = newsAdapter(requireContext())
 
         // TODO : USE DAGGER FOR INJECTION
-        val newsRepository = Repository()
-        val viewModelProviderFactory = MainViewModelFactory(newsRepository)
-        viewModel = ViewModelProvider(this, viewModelProviderFactory)[MainViewModel::class.java]
+//        val newsRepository = Repository(NewsDatabase(requireContext()))
+//        val viewModelProviderFactory = MainViewModelFactory(newsRepository)
+        viewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
 
 //        setupRecyclerView()
+
+        binding.rvNews.adapter = adapter
+        binding.rvNews.layoutManager = LinearLayoutManager(requireContext())
 
         viewModel.breakingNews.observe(viewLifecycleOwner , Observer {response ->
             when(response){
@@ -58,9 +58,7 @@ class HomeFragment : Fragment() {
                     hideProgressBar()
                     // If response data is not null
                     response.data?.let {
-                      list.addAll(response.data.articles)
-                        rv_news.adapter = newsAdapter(requireContext(),list)
-                        rv_news.layoutManager = LinearLayoutManager(requireContext())
+                        adapter.setData(response.data.articles)
                     }
                 }
                 is Resource.Error -> {

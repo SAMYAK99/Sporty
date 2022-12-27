@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.widget.PopupMenu
 import androidx.navigation.fragment.findNavController
 import com.projects.trending.sporty.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
 

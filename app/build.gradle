@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id('androidx.navigation.safeargs.kotlin')
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -92,5 +93,19 @@ dependencies {
 
     // Bottom nav bar
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
+
+
+    // dependency for exoplayer
+    implementation 'com.google.android.exoplayer:exoplayer:r2.4.0'
+    implementation 'com.google.android.exoplayer:exoplayer-core:r2.4.0'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:r2.4.0'
+    implementation 'com.google.android.exoplayer:exoplayer-hls:r2.4.0'
+    implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:r2.4.0'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:r2.4.0'
+
+    // Dagger - Hilt
+    implementation 'com.google.dagger:hilt-android:2.42'
+    kapt 'com.google.dagger:hilt-compiler:2.42'
+    implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
 
 }

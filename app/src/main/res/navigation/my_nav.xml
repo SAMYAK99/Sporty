@@ -9,10 +9,42 @@
         android:id="@+id/homeFragment"
         android:name="com.projects.trending.sporty.views.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/bookMarkFragment"
         android:name="com.projects.trending.sporty.views.BookMarkFragment"
         android:label="fragment_book_mark"
-        tools:layout="@layout/fragment_book_mark" />
+        tools:layout="@layout/fragment_book_mark" >
+        <action
+            android:id="@+id/action_bookMarkFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="com.projects.trending.sporty.views.NewsDetailFragment"
+        android:label="NewsDetailFragment" >
+        <action
+            android:id="@+id/action_newsDetailFragment_to_fullNewsFragment"
+            app:destination="@id/fullNewsFragment" />
+        <argument
+            android:name="data"
+            app:argType="com.projects.trending.sporty.models.Article"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/fullNewsFragment"
+        android:name="com.projects.trending.sporty.views.FullNewsFragment"
+        android:label="FullNewsFragment" >
+        <argument
+            android:name="url"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

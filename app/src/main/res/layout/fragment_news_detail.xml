@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".views.NewsDetailFragment">
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-127dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <!--          <ImageView-->
+            <!--              android:id="@+id/newsItemImageView"-->
+            <!--              android:layout_width="match_parent"-->
+            <!--              android:layout_height="300dp"-->
+            <!--              android:scaleType="fitXY"-->
+            <!--              android:src="@drawable/spinner"-->
+            <!--              app:layout_constraintEnd_toEndOf="parent"-->
+
+            <!--              app:layout_constraintStart_toStartOf="@+id/newsItemHeadingTextView"-->
+            <!--              app:layout_constraintTop_toTopOf="parent" />-->
+
+            <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+                android:id="@+id/idExoPlayerVIew"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_centerInParent="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/newsItemHeadingTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/black"
+                android:text="This is the sample text to check
+        everything is working fine and upto the mark, That's all peeps"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/idExoPlayerVIew"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <TextView
+                android:id="@+id/newsItemSubheadinTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/black"
+                android:layout_marginEnd="10dp"
+                android:text="This is the sample text to check
+        everything is working fine and upto the mark, That's all peeps"
+                android:textSize="22sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@+id/newsItemHeadingTextView"
+                app:layout_constraintTop_toBottomOf="@+id/newsItemHeadingTextView" />
+
+
+            <Button
+                android:id="@+id/readFullNewsBtn"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="75dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/curve_button"
+                android:text="@string/read_full_news"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="@+id/newsItemSubheadinTextView"
+                app:layout_constraintStart_toStartOf="@+id/newsItemSubheadinTextView"
+                app:layout_constraintTop_toBottomOf="@+id/newsItemSubheadinTextView" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_save"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

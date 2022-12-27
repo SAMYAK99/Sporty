@@ -1,4 +1,4 @@
-package com.projects.trending.sporty.remote
+package com.projects.trending.sporty.data.remote
 
 import com.projects.trending.sporty.utils.Constants
 import okhttp3.OkHttpClient
